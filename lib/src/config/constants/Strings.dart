@@ -1,0 +1,9 @@
+const String logo2x = "lib/src/assets/images/logo@2x.png";
+const String logox = "lib/src/assets/images/logo.png";
+const String logo3x = "lib/src/assets/images/logo@3x.png";
+const String profileround = "lib/src/assets/images/profile-circle.png";
+const String profileround2x = "lib/src/assets/images/profile-circle@2x.png";
+const String profileround3x = "lib/src/assets/images/profile-circle@3x.png";
+const String directbox = "lib/src/assets/images/directbox-send.png";
+const String directbox2x = "lib/src/assets/images/directbox-send@2x.png";
+const String directbox3x = "lib/src/assets/images/directbox-send@3x.png";
