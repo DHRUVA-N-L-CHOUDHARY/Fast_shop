@@ -11,9 +11,13 @@ abstract class Routes {
   static const RESET = Paths.RESET;
   static const HOME = Paths.HOME;
   static const MENU = Paths.MENU;
-
-
-
+  static const SHPFAQ = Paths.SHPFAQ;
+  static const SHPADD = Paths.SHPADD;
+  static const SHPADDPICK = Paths.SHPADDPICK;
+  static const RETFAQ = Paths.RETFAQ;
+  static const PAYFAQ = Paths.PAYFAQ;
+  static const MYACC = Paths.MYACC;
+  static const NAV = Paths.NAV;
 }
 
 abstract class Paths {
@@ -25,5 +29,11 @@ abstract class Paths {
   static const RESET = "/reset";
   static const HOME = "/home";
   static const MENU = "/menu";
-
+  static const SHPFAQ = "/shpfaq";
+  static const SHPADD = "/shpadd";
+  static const SHPADDPICK = "/shpaddpick";
+  static const RETFAQ = "/retfaq";
+  static const PAYFAQ = "/payfaq";
+  static const MYACC = "/myacc";
+  static const NAV = "/nav";
 }

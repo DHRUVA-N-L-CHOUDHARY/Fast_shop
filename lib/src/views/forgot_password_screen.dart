@@ -89,7 +89,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                 padding: EdgeInsets.all(10.0),
                 child: CustomInputField(
                   labelText: "Email or Phone number",
-                  errorText: "Enter correct password",
+                  // errorText: "Enter correct password",
                   prefix: false,
                   controller: controller.forgot,
                 ),

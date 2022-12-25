@@ -14,15 +14,18 @@ class MenuScreen extends StatelessWidget {
     LogoutController logoutController = Get.put(LogoutController());
 
     return Scaffold(
-        backgroundColor: Colors.white,
-        // ignore: prefer_const_constructors
-        body: Center(
-          child: Custombutton(
+      backgroundColor: Colors.white,
+      // ignore: prefer_const_constructors
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Custombutton(
             inputcolor: kPrimaryColor,
             customheight: 55,
             customwidth: 280,
             inputrad: 15,
-            textStyle: TextStyle(
+            textStyle: const TextStyle(
               fontSize: 22,
               color: Colors.white,
             ),
@@ -33,6 +36,110 @@ class MenuScreen extends StatelessWidget {
               });
             },
           ),
-        ));
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Custombutton(
+              inputcolor: kPrimaryColor,
+              customheight: 55,
+              customwidth: 280,
+              inputrad: 15,
+              textStyle: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+              ),
+              text: "SHIPFAQ",
+              press: () {
+                Get.toNamed("/shpfaq");
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Custombutton(
+              inputcolor: kPrimaryColor,
+              customheight: 55,
+              customwidth: 280,
+              inputrad: 15,
+              textStyle: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+              ),
+              text: "SHIPPING ADDRESS PAGE",
+              press: () {
+                Get.toNamed("/shpadd");
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Custombutton(
+              inputcolor: kPrimaryColor,
+              customheight: 55,
+              customwidth: 280,
+              inputrad: 15,
+              textStyle: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+              ),
+              text: "SHIPPING ADDRESS  PICK PAGE",
+              press: () {
+                Get.toNamed("/shpaddpick");
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Custombutton(
+              inputcolor: kPrimaryColor,
+              customheight: 55,
+              customwidth: 280,
+              inputrad: 15,
+              textStyle: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+              ),
+              text: "RETURN FAQ",
+              press: () {
+                Get.toNamed("/retfaq");
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Custombutton(
+              inputcolor: kPrimaryColor,
+              customheight: 55,
+              customwidth: 280,
+              inputrad: 15,
+              textStyle: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+              ),
+              text: "PAYMENT FAQ",
+              press: () {
+                Get.toNamed("/payfaq");
+              },
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Custombutton(
+              inputcolor: kPrimaryColor,
+              customheight: 55,
+              customwidth: 280,
+              inputrad: 15,
+              textStyle: TextStyle(
+                fontSize: 22,
+                color: Colors.white,
+              ),
+              text: "NAVIGATION",
+              press: () {
+                Get.toNamed("/nav");
+              },
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

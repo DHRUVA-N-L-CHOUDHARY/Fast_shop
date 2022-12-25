@@ -72,7 +72,15 @@ class LoginScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8.0),
                         child: CustomInputField(
                           labelText: "Email",
-                          errorText: "Please enter correct Email address",
+                          emptyValidation: false,
+                          validation: (value) {
+                            if (value == "" || !GetUtils.isEmail(value)) {
+                              return "Email is not valid";
+                            } else {
+                              return null;
+                            }
+                          },
+                          // errorText: "Please enter correct Email address",
                           iconData: directbox,
                           controller: controller.emailController,
                         ),
@@ -81,9 +89,17 @@ class LoginScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(0.0),
                         child: CustomInputField(
                           labelText: "Password",
-                          errorText: "Enter correct password",
-                          iconData: directbox,
+                          // errorText: "Enter correct password",
+                          iconData: lock,
+                          suffix: true,
                           controller: controller.passwordController,
+                          suffixWidget: InkWell(
+                            onTap: () {
+                              controller.setSecureUnSecure();
+                            },
+                        child: const ImageIcon(AssetImage(boldeye)),
+                          ),
+                          isSecure: controller.isSecure,
                         ),
                       ),
                       const SizedBox(

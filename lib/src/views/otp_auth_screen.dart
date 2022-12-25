@@ -3,6 +3,7 @@ import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+// import 'package:pinput/pinput.dart';
 
 
 class OTPAuthScreen extends StatefulWidget {
@@ -86,11 +87,11 @@ class _OTPAuthScreenState extends State<OTPAuthScreen> {
             //   // listenForMultipleSmsOnAndroid: true,
             //   // androidSmsAutofillMethod: AndroidSmsAutofillMethod.smsRetrieverApi,
             //   // autofocus: true,
-            //       length: 4,
-            //       onChanged: (String pin) {
-            //         currentString = pin;
-            //       },
-            //     ),
+                  // length: 4,
+                  // onChanged: (String pin) {
+                    // currentString = pin;
+                  // },
+                // ),
             const SizedBox(
                 height: 10,
               ),
