@@ -97,7 +97,7 @@ class LoginScreen extends StatelessWidget {
                             onTap: () {
                               controller.setSecureUnSecure();
                             },
-                        child: const ImageIcon(AssetImage(boldeye)),
+                            child: const ImageIcon(AssetImage(boldeye)),
                           ),
                           isSecure: controller.isSecure,
                         ),

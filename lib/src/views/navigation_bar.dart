@@ -1,7 +1,9 @@
 import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/views/My_Account_screen.dart';
+import 'package:fast_shop/src/views/Return_sucess_screen.dart';
 import 'package:fast_shop/src/views/Wishlist_screen.dart';
+import 'package:fast_shop/src/views/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 class NavigationScreen extends StatefulWidget {
@@ -26,10 +28,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
         child: IndexedStack(
           index: tabIndex,
           children: const [
-            MyAccountScreen(),
+            WeclomeHomeScreen(),
             MyAccountScreen(),
             WishListScreen(),
-            MyAccountScreen(),
+            ReturnSucessScreen(),
             MyAccountScreen(),
           ],
         ),

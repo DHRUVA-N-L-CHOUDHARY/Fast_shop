@@ -1,13 +1,19 @@
 import 'package:fast_shop/src/views/Account_shopping_FAQs_screen.dart';
 import 'package:fast_shop/src/views/Cancellation_Faq_screen.dart';
+import 'package:fast_shop/src/views/Cancellation_success_screen.dart';
 import 'package:fast_shop/src/views/Customer_care_screen.dart';
 import 'package:fast_shop/src/views/My_Account_screen.dart';
+import 'package:fast_shop/src/views/My_orders_screen.dart';
+import 'package:fast_shop/src/views/My_returns_screen.dart';
+import 'package:fast_shop/src/views/Order_screen.dart';
 import 'package:fast_shop/src/views/Payment_FAQs.dart';
 import 'package:fast_shop/src/views/Payments_screen.dart';
 import 'package:fast_shop/src/views/Return_FAQs_Screen.dart';
+import 'package:fast_shop/src/views/Return_sucess_screen.dart';
 import 'package:fast_shop/src/views/Shipping_Faqs_screen.dart';
 import 'package:fast_shop/src/views/Shipping_address_pickup.dart';
 import 'package:fast_shop/src/views/Wishlist_screen.dart';
+import 'package:fast_shop/src/views/billing_pur_screen.dart';
 import 'package:fast_shop/src/views/forgot_password_screen.dart';
 import 'package:fast_shop/src/views/gift_card_FAQs.dart';
 import 'package:fast_shop/src/views/home_screen.dart';
@@ -18,6 +24,7 @@ import 'package:fast_shop/src/views/otp_auth_screen.dart';
 import 'package:fast_shop/src/views/reset_password_screen.dart';
 import 'package:fast_shop/src/views/saved_card_screen.dart';
 import 'package:fast_shop/src/views/splash_screen.dart';
+import 'package:fast_shop/src/views/welcome_screen.dart';
 import 'package:get/get.dart';
 import '../views/Shipping_address_delivery.dart';
 import '../views/registration_screen.dart';
@@ -116,6 +123,34 @@ class AppPages {
     GetPage(
       name: Paths.CALFQ,
       page: () => const CancellationFaqscreen()
+    ),
+    GetPage(
+      name: Paths.BLP,
+      page: () => const BillingpurScreen()
+    ),
+    GetPage(
+      name: Paths.MORD,
+      page: () => const MyOrdersScreen()
+    ),
+    GetPage(
+      name: Paths.ORD,
+      page: () => const Ordersscreen(ordid: '',)
+    ),
+    GetPage(
+      name: Paths.MRET,
+      page: () => const MyreturnsScreen()
+    ),
+    GetPage(
+      name: Paths.CANS,
+      page: () => const RequestCancellationSucessScreen()
+    ),
+    GetPage(
+      name: Paths.RSAS,
+      page: () => const ReturnSucessScreen()
+    ),
+    GetPage(
+      name: Paths.WEHM,
+      page: () => const WeclomeHomeScreen()
     ),
   ];
 }

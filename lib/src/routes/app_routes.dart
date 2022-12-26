@@ -25,6 +25,13 @@ abstract class Routes {
   static const GFTFAQ = Paths.GFTFAQ;
   static const SDCD = Paths.SDCD;
   static const CALFQ = Paths.CALFQ;
+  static const BLP = Paths.BLP;
+  static const MORD = Paths.MORD;
+  static const ORD = Paths.ORD;
+  static const MRET = Paths.MRET;
+  static const CANS = Paths.CANS;
+  static const RSAS = Paths.RSAS;
+  static const WEHM = Paths.WEHM;
 }
 
 abstract class Paths {
@@ -50,4 +57,11 @@ abstract class Paths {
   static const PYNT = "/pynt";
   static const SDCD = "/sdcd";
   static const CALFQ = "/calfq";
+  static const BLP = "/blp";
+  static const MORD = "/mord";
+  static const ORD = "/ord";
+  static const MRET = "/mret";
+  static const CANS = "/cans";
+  static const RSAS = "/rsas";
+  static const WEHM = "/wehm";
 }

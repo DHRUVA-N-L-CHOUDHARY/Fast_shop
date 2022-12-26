@@ -28,7 +28,7 @@ class PaymentScreen extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: (() {
-            Get.toNamed("/nav");
+            Get.toNamed("/payfaq");
           }),
         ),
         backgroundColor: kConrtPrimaryColor,
