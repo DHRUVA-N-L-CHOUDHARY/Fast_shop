@@ -27,7 +27,7 @@ class MyAccountScreen extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: (() {
-            Get.toNamed("/menu");
+            Get.toNamed("/sdcd");
           }),
         ),
         backgroundColor: kConrtPrimaryColor,

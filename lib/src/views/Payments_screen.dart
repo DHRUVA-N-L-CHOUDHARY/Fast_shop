@@ -1,24 +1,23 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
-import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_List_tile_address.dart';
-import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_address_container.dart';
-import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_type.dart';
+import 'package:fast_shop/src/utils/widgets/Payments/Payments_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
-class ShippingAddressPickup extends StatelessWidget {
-  const ShippingAddressPickup({super.key});
+class PaymentScreen extends StatelessWidget {
+  const PaymentScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Shipping Address",
+          "Payments",
           style: TextStyle(fontSize: 25, color: Colors.black),
         ),
         centerTitle: true,
@@ -46,87 +45,98 @@ class ShippingAddressPickup extends StatelessWidget {
                   image: const DecorationImage(image: AssetImage(notif2x)),
                   color: kPrimaryColor,
                   borderRadius: BorderRadius.circular(5)),
-              // child: IconButton(
-              //   iconSize: 50,
-              //   icon:  const ImageIcon(
-              //     AssetImage(notif),
-              //     size: 100,
-              //     color: kConrtPrimaryColor,
-              //   ),
-              //   onPressed: () {},
-              // ),
             ),
-          )
+          ),
         ],
       ),
       backgroundColor: kConrtPrimaryColor,
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                // ignore: prefer_const_literals_to_create_immutables
-                children: [
-                  CustomContainer(
-                    ctrinputHeight: 60,
-                    ctrinputWidth: 150,
-                    brdcolor: Colors.black,
-                    inputtext: "Home Delivery",
-                    bexist: true,
-                    onChanged: (String val) {},
-                    radid: 1,
-                    radstr: 'Home Delivery',
-                  ),
-                  const SizedBox(
-                    width: 50,
-                  ),
-                  CustomContainer(
-                    ctrinputHeight: 60,
-                    ctrinputWidth: 150,
-                    brdcolor: Colors.black,
-                    inputtext: "Pick Up Point",
-                    bexist: true,
-                    onChanged: (String val) {},
-                    radid: 2,
-                    radstr: 'Pick Up Point',
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              CustomListTileAddress(
-                inputtext: "Skew bridge",
-                inputsubtext: "2345 Calefornia west london",
-                onChanged: (String val) {},
+        child: Column(
+          children: [
+            SizedBox(
+              height: 0,
+            ),
+            CustomPaymenttile(
+                inputtext: "Master card",
+                inputsubtext: "…. …. 4567 8790",
+                radstr: "",
                 radid: 1,
-                radstr: '',
-              ),
-              CustomListTileAddress(
-                inputtext: "Town hall",
-                inputsubtext: "novak west paris",
                 onChanged: (String val) {},
+                imgpth: mastercrd),
+             CustomPaymenttile(
+                inputtext: "Apple pay",
+                inputsubtext: "…. …. 4567 8790",
+                radstr: "",
                 radid: 2,
-                radstr: '',
-              ),
-              CustomListTileAddress(
-                inputtext: "Ware house",
-                inputsubtext: "23 west bringham",
                 onChanged: (String val) {},
+                imgpth: applpay),
+             CustomPaymenttile(
+                inputtext: "Pay Pal",
+                inputsubtext: "",
+                radstr: "",
                 radid: 3,
-                radstr: '',
+                onChanged: (String val) {},
+                imgpth: paypal),
+             CustomPaymenttile(
+                inputtext: "American Express",
+                inputsubtext:  "",
+                radstr: "",
+                radid: 4,
+                onChanged: (String val) {},
+                imgpth: americanexp),
+            CustomPaymenttile(
+                inputtext: "Visa",
+                inputsubtext:  "",
+                radstr: "",
+                radid: 5,
+                onChanged: (String val) {},
+                imgpth: visa),
+             InkWell(
+              onTap: () {},
+              child: DottedBorder(
+                dashPattern: [3],
+                strokeWidth: 2,
+                color: Colors.black38,
+                radius: Radius.circular(30),
+                child: Container(
+                  height: SizeConfig(context).getProportionateScreenHeight(50),
+                  width: SizeConfig(context).getProportionateScreenWidth(310),
+                  decoration: BoxDecoration(
+                    boxShadow: const [
+                      BoxShadow(
+                        color: Colors.black12,
+                        blurRadius: 5,
+                        offset: Offset(5, 5),
+                      ),
+                    ],
+                    color: kConrtPrimaryColor,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Text(
+                        "+",
+                        style: TextStyle(fontSize: 18, color: Colors.black54),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        "Add New Address",
+                        style: TextStyle(fontSize: 18, color: Colors.black54),
+                      )
+                    ],
+                  ),
+                ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
-      bottomSheet: Container(
+     bottomSheet: Container(
         color: kConrtPrimaryColor,
         height: 250,
         child: Column(

@@ -24,7 +24,7 @@ class ShippingFAQ extends StatelessWidget {
               color: Colors.black,
             ),
             onPressed: (() {
-              Get.toNamed("/menu");
+              Get.toNamed("/shpaddpick");
             }),
           ),
           backgroundColor: kConrtPrimaryColor,

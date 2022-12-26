@@ -44,17 +44,8 @@ class ShippingAddress extends StatelessWidget {
                   image: const DecorationImage(image: AssetImage(notif2x)),
                   color: kPrimaryColor,
                   borderRadius: BorderRadius.circular(5)),
-              // child: IconButton(
-              //   iconSize: 50,
-              //   icon:  const ImageIcon(
-              //     AssetImage(notif),
-              //     size: 100,
-              //     color: kConrtPrimaryColor,
-              //   ),
-              //   onPressed: () {},
-              // ),
             ),
-          )
+          ),
         ],
       ),
       backgroundColor: kConrtPrimaryColor,

@@ -18,6 +18,13 @@ abstract class Routes {
   static const PAYFAQ = Paths.PAYFAQ;
   static const MYACC = Paths.MYACC;
   static const NAV = Paths.NAV;
+  static const PYNT = Paths.PYNT;
+  static const WLST = Paths.WLST;
+  static const CSTCR = Paths.CSTCR;
+  static const ACFAQ = Paths.ACFAQ;
+  static const GFTFAQ = Paths.GFTFAQ;
+  static const SDCD = Paths.SDCD;
+  static const CALFQ = Paths.CALFQ;
 }
 
 abstract class Paths {
@@ -36,4 +43,11 @@ abstract class Paths {
   static const PAYFAQ = "/payfaq";
   static const MYACC = "/myacc";
   static const NAV = "/nav";
+  static const WLST = "/wlst";
+  static const CSTCR = "/cstcr";
+  static const ACFAQ = "/acfaq";
+  static const GFTFAQ = "/gftfaq";
+  static const PYNT = "/pynt";
+  static const SDCD = "/sdcd";
+  static const CALFQ = "/calfq";
 }
