@@ -5,7 +5,6 @@ import 'package:fast_shop/src/views/Sucess_screens/Return_sucess_screen.dart';
 import 'package:fast_shop/src/views/Wishlist_screen.dart';
 import 'package:fast_shop/src/views/Main_pages/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 class NavigationScreen extends StatefulWidget {
   const NavigationScreen({super.key});
 

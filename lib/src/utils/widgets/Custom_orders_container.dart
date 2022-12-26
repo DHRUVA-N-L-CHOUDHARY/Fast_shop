@@ -1,9 +1,6 @@
 import 'package:fast_shop/src/config/constants/Colors.dart';
-import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CustomOrdersContainer extends StatelessWidget {
   final String status;
