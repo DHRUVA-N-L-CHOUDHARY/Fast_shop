@@ -56,22 +56,22 @@ class CustomerCareScreen extends StatelessWidget {
                   ],
                 ),
                 CustomListtile(
-                  inputtext: "Shipping FAQs",
+                  inputtext: "Shipping FAQs",navi: "/shpfaq",
                 ),
                 CustomListtile(
-                  inputtext: "Cancellation FAQs",
+                  inputtext: "Cancellation FAQs",navi: "/calfq",
                 ),
                 CustomListtile(
-                  inputtext: "Payment FAQs",
+                  inputtext: "Payment FAQs",navi: "/payfaq",
                 ),
                 CustomListtile(
-                  inputtext: "Return FAQs",
+                  inputtext: "Return FAQs",navi: "/retfaq",
                 ),
                 CustomListtile(
-                  inputtext: "Account & Shopping",
+                  inputtext: "Account & Shopping",navi: "/acfaq",
                 ),
                 CustomListtile(
-                  inputtext: "Gift Cards",
+                  inputtext: "Gift Cards",navi: "/gftfaq",
                 ),
               ],
             ),

@@ -54,3 +54,11 @@ const String nikespts = "lib/src/assets/images/NIKE_SPORTSWEAR_ICON_TANK-i179771
 //confirmation
 const String greencircle = "lib/src/assets/images/verify_success.png";
 
+//Status
+const String tickmark = "lib/src/assets/images/Vector.png";
+
+//cart
+const String vouch = "lib/src/assets/images/vuesax-twotone-tag@2x.png";
+const String sploff = "lib/src/assets/images/36-365439_special-offer-icon-academy-of-spiritual-humor-the@2x.png";
+const String refer = "lib/src/assets/images/refer-earn-icon@2x.png";
+const String copy = "lib/src/assets/images/vuesax-linear-document-copy@2x.png";

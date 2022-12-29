@@ -4,7 +4,7 @@ import 'package:fast_shop/src/controllers/reset_password_controller.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_input_field.dart';
 import 'package:fast_shop/src/utils/widgets/Dialogbox_widget.dart';
-import 'package:fast_shop/src/views/registration_screen.dart';
+import 'package:fast_shop/src/views/Auth/registration_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

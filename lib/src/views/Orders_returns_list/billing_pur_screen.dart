@@ -2,6 +2,7 @@ import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
+import 'package:fast_shop/src/views/Orders_returns_list/Order_details_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -166,7 +167,9 @@ class BillingpurScreen extends StatelessWidget {
                                   fontSize: 18,
                                   color: Colors.white,
                                 ),
-                                press: () {},
+                                press: () {
+                                  Get.to(() => OrderdetailsPage());
+                                },
                               ),
                             ],
                           ),

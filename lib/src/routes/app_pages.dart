@@ -1,33 +1,34 @@
 import 'package:fast_shop/src/views/FAQs/Account_shopping_FAQs_screen.dart';
 import 'package:fast_shop/src/views/FAQs/Cancellation_Faq_screen.dart';
-import 'package:fast_shop/src/views/Sucess_screens/Cancellation_success_screen.dart';
+import 'package:fast_shop/src/views/Notification_screen.dart';
+import 'package:fast_shop/src/views/Payment_other_screens/Referal_screen.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Cancellation_success_screen.dart';
 import 'package:fast_shop/src/views/FAQs/Customer_care_screen.dart';
 import 'package:fast_shop/src/views/Main_pages/My_Account_screen.dart';
 import 'package:fast_shop/src/views/Orders_returns_list/My_orders_screen.dart';
 import 'package:fast_shop/src/views/Orders_returns_list/My_returns_screen.dart';
 import 'package:fast_shop/src/views/Orders_returns_list/Order_screen.dart';
 import 'package:fast_shop/src/views/FAQs/Payment_FAQs.dart';
-import 'package:fast_shop/src/views/Payments_screen.dart';
+import 'package:fast_shop/src/views/Payment_other_screens/Payments_screen.dart';
 import 'package:fast_shop/src/views/FAQs/Return_FAQs_Screen.dart';
-import 'package:fast_shop/src/views/Sucess_screens/Return_sucess_screen.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Return_sucess_screen.dart';
 import 'package:fast_shop/src/views/FAQs/Shipping_Faqs_screen.dart';
 import 'package:fast_shop/src/views/Shipping_pages/Shipping_address_pickup.dart';
-import 'package:fast_shop/src/views/Wishlist_screen.dart';
-import 'package:fast_shop/src/views/Sucess_screens/billing_pur_screen.dart';
-import 'package:fast_shop/src/views/forgot_password_screen.dart';
+import 'package:fast_shop/src/views/Main_pages/Wishlist_screen.dart';
+import 'package:fast_shop/src/views/Orders_returns_list/billing_pur_screen.dart';
+import 'package:fast_shop/src/views/Auth/forgot_password_screen.dart';
 import 'package:fast_shop/src/views/FAQs/gift_card_FAQs.dart';
-import 'package:fast_shop/src/views/home_screen.dart';
-import 'package:fast_shop/src/views/login_screen.dart';
-import 'package:fast_shop/src/views/menu_screen.dart';
+import 'package:fast_shop/src/views/Auth/home_screen.dart';
+import 'package:fast_shop/src/views/Auth/login_screen.dart';
 import 'package:fast_shop/src/views/navigation_bar.dart';
-import 'package:fast_shop/src/views/otp_auth_screen.dart';
-import 'package:fast_shop/src/views/reset_password_screen.dart';
-import 'package:fast_shop/src/views/saved_card_screen.dart';
+import 'package:fast_shop/src/views/Auth/otp_auth_screen.dart';
+import 'package:fast_shop/src/views/Auth/reset_password_screen.dart';
+import 'package:fast_shop/src/views/Payment_other_screens/saved_card_screen.dart';
 import 'package:fast_shop/src/views/splash_screen.dart';
 import 'package:fast_shop/src/views/Main_pages/welcome_screen.dart';
 import 'package:get/get.dart';
 import '../views/Shipping_pages/Shipping_address_delivery.dart';
-import '../views/registration_screen.dart';
+import '../views/Auth/registration_screen.dart';
 part 'app_routes.dart';
 
 class AppPages {
@@ -65,10 +66,6 @@ class AppPages {
       page: () => const HomeScreen()
     ),
     GetPage(
-      name: Paths.MENU,
-      page: () => const MenuScreen()
-    ),
-    GetPage(
       name: Paths.SHPFAQ,
       page: () => const ShippingFAQ()
     ),
@@ -94,7 +91,7 @@ class AppPages {
     ),
      GetPage(
       name: Paths.NAV,
-      page: () => const NavigationScreen()
+      page: () => NavigationScreen()
     ),
     GetPage(
       name: Paths.WLST,
@@ -152,5 +149,18 @@ class AppPages {
       name: Paths.WEHM,
       page: () => const WeclomeHomeScreen()
     ),
+     GetPage(
+      name: Paths.REFE,
+      page: () => const ReferalScreen()
+    ),
+     GetPage(
+      name: Paths.NOTI,
+      page: () => const NotificationScreen()
+    ),
+     GetPage(
+      name: Paths.WEHM,
+      page: () => const WeclomeHomeScreen()
+    ),
+
   ];
 }

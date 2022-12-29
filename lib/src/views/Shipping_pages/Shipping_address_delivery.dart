@@ -5,6 +5,7 @@ import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_address_container.dart';
 import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_type.dart';
+import 'package:fast_shop/src/views/Payment_other_screens/Payments_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -228,7 +229,9 @@ class ShippingAddress extends StatelessWidget {
                 fontSize: 22,
                 color: Colors.white,
               ),
-              press: () {},
+              press: () {
+                Get.to(() => PaymentScreen());
+              },
             ),
           ],
         ),

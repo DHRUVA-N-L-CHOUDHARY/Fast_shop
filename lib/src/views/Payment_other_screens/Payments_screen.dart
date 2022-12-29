@@ -4,6 +4,7 @@ import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:fast_shop/src/utils/widgets/Payments/Payments_screen.dart';
+import 'package:fast_shop/src/views/Orders_returns_list/billing_pur_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -221,7 +222,9 @@ class PaymentScreen extends StatelessWidget {
                 fontSize: 22,
                 color: Colors.white,
               ),
-              press: () {},
+              press: () {
+                Get.to(() => BillingpurScreen());
+              },
             ),
           ],
         ),

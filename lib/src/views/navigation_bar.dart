@@ -1,23 +1,25 @@
 import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
+import 'package:fast_shop/src/views/Main_pages/Cart_screen.dart';
 import 'package:fast_shop/src/views/Main_pages/My_Account_screen.dart';
-import 'package:fast_shop/src/views/Sucess_screens/Return_sucess_screen.dart';
-import 'package:fast_shop/src/views/Wishlist_screen.dart';
+import 'package:fast_shop/src/views/Main_pages/Wishlist_screen.dart';
+import 'package:fast_shop/src/views/Main_pages/categories_screen.dart';
 import 'package:fast_shop/src/views/Main_pages/welcome_screen.dart';
 import 'package:flutter/material.dart';
 class NavigationScreen extends StatefulWidget {
-  const NavigationScreen({super.key});
+  late int tabIndex;
+  NavigationScreen({super.key, this.tabIndex = 2});
 
   @override
   State<NavigationScreen> createState() => _NavigationScreenState();
 }
 
 class _NavigationScreenState extends State<NavigationScreen> {
-  int tabIndex = 2;
+  // int tabIndex = widget.tbIndex;
   void changeTabIndex(int index)
   {
     setState(() {
-      tabIndex = index;      
+      widget.tabIndex = index;      
     });
   }
   @override
@@ -25,12 +27,12 @@ class _NavigationScreenState extends State<NavigationScreen> {
     return Scaffold(
       body: SafeArea(
         child: IndexedStack(
-          index: tabIndex,
+          index: widget.tabIndex,
           children: const [
             WeclomeHomeScreen(),
-            MyAccountScreen(),
+            CategoriesScreen(),
             WishListScreen(),
-            ReturnSucessScreen(),
+            CartScreen(),
             MyAccountScreen(),
           ],
         ),
@@ -45,7 +47,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.shifting,
-          currentIndex: tabIndex,
+          currentIndex: widget.tabIndex,
           items: [
             _bottomNavigationBarItem(
               icon: house,

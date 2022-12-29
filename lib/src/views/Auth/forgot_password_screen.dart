@@ -110,7 +110,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                   ),
                   press: ()
                   {
-                    Get.offAllNamed("/otpauth");
+                    Get.toNamed("/otpauth");
                   },
                 ),
               ),

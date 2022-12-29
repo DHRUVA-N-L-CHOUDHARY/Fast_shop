@@ -1,8 +1,8 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fast_shop/src/views/login_screen.dart';
-import 'package:fast_shop/src/views/menu_screen.dart';
-import 'package:fast_shop/src/views/registration_screen.dart';
+import 'package:fast_shop/src/views/Auth/login_screen.dart';
+import 'package:fast_shop/src/views/Auth/registration_screen.dart';
+import 'package:fast_shop/src/views/navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         if(_querySnapshot.docs.isEmpty) {
         return const RegistrationScreen();
         } else {
-          return const MenuScreen();
+          return NavigationScreen(tabIndex: 0,);
         }
       } else {
         return const LoginScreen();

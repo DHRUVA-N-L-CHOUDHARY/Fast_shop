@@ -2,6 +2,17 @@ import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/Topography.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
+import 'package:fast_shop/src/views/Shipping_pages/Add_new_address_screen.dart';
+import 'package:fast_shop/src/views/Main_pages/Cart_screen.dart';
+import 'package:fast_shop/src/views/Notification_screen.dart';
+import 'package:fast_shop/src/views/Product_search_screen.dart';
+import 'package:fast_shop/src/views/Payment_other_screens/Referal_screen.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Return_amount_type.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Return_status_screen.dart';
+import 'package:fast_shop/src/views/Orders_returns_list/Order_details_page.dart';
+import 'package:fast_shop/src/views/Product_detail_screen.dart';
+import 'package:fast_shop/src/views/Payment_other_screens/Review_screen.dart';
+import 'package:fast_shop/src/views/Main_pages/categories_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

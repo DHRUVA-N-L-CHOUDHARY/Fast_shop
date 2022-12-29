@@ -1,5 +1,5 @@
 import 'package:fast_shop/src/services/auth.dart';
-import 'package:fast_shop/src/views/menu_screen.dart';
+import 'package:fast_shop/src/views/navigation_bar.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -43,7 +43,7 @@ class RegistrationController extends GetxController {
           if (kDebugMode) {
             print("result : $result");
           }
-          Get.offAll(const MenuScreen());
+          Get.offAll(NavigationScreen(tabIndex: 0,));
         }
       });
     }

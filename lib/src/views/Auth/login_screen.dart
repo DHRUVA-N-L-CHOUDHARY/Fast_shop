@@ -3,7 +3,7 @@ import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/controllers/login_screen_controller.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_input_field.dart';
-import 'package:fast_shop/src/views/registration_screen.dart';
+import 'package:fast_shop/src/views/Auth/registration_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -113,7 +113,7 @@ class LoginScreen extends StatelessWidget {
                             child: TextButton(
                               child: const Text("Forgot Password?"),
                               onPressed: () {
-                                Get.offAllNamed("/forgot");
+                                Get.toNamed("/forgot");
                               },
                             ),
                           ),
@@ -124,7 +124,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       Center(
                         child: Custombutton(
-                          text: "login",
+                          text: "Login",
                           inputcolor: kPrimaryColor,
                           customheight: 55,
                           customwidth: 280,

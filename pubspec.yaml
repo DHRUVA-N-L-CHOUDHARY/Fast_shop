@@ -50,6 +50,9 @@ dependencies:
   google_sign_in: ^5.4.2
   dio: ^4.0.6
   dotted_border: ^2.0.0+3
+  flutter_rating_bar: ^4.0.1
+  order_tracker: ^0.0.2
+  searchfield: ^0.7.2
 
 dev_dependencies:
   flutter_test:

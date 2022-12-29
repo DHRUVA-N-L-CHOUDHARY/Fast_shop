@@ -1,7 +1,7 @@
 // ignore_for_file: unnecessary_overrides
 
 import 'package:fast_shop/src/services/auth.dart';
-import 'package:fast_shop/src/views/menu_screen.dart';
+import 'package:fast_shop/src/views/navigation_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -47,7 +47,9 @@ class LoginController extends GetxController {
             print(result.toString());
             print(result.toString());
           }
-          Get.offAllNamed("/nav");
+          Get.to(() => NavigationScreen(
+                tabIndex: 0,
+              ));
         }
       });
     }

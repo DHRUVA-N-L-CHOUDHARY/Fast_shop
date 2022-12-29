@@ -99,21 +99,22 @@ class MyAccountScreen extends StatelessWidget {
               ),
               CustomListtile(
                 inputtext: "Orders",
+                navi: "/ord",
               ),
               CustomListtile(
-                inputtext: "Customer Care",
+                inputtext: "Customer Care", navi: '/cstcr',
               ),
               CustomListtile(
-                inputtext: "Invite Friends & Earn ",
+                inputtext: "Invite Friends & Earn ", navi: '/refe',
               ),
               CustomListtile(
-                inputtext: "Notification",
+                inputtext: "Notification", navi: '/noti',
               ),
               CustomListtile(
-                inputtext: "Saved Cards",
+                inputtext: "Saved Cards", navi: '/sdcd',
               ),
               CustomListtile(
-                inputtext: "Logout",
+                inputtext: "Logout", navi: '',
               ),
             ],
           ),
