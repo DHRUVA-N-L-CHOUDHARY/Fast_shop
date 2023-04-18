@@ -3,13 +3,32 @@ import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_app_bar.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
-import 'package:fast_shop/src/utils/widgets/Custom_list_tile_radio.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Return_amount_type.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
-class Returnproductreasonscreen extends StatelessWidget {
+enum RequestCanc {
+  Receivedwrongitem,
+  Dontwanttheproductanymore,
+  Receiveddifferentcolor,
+  Productismissinginthepackage,
+  Qualityoftheproductnotasexpected,
+  Theproductreceivedisdefective,
+  Receiveddamageditem
+}
+
+class Returnproductreasonscreen extends StatefulWidget {
   const Returnproductreasonscreen({super.key});
+
+  @override
+  State<Returnproductreasonscreen> createState() =>
+      _ReturnproductreasonscreenState();
+}
+
+class _ReturnproductreasonscreenState extends State<Returnproductreasonscreen> {
+  RequestCanc? _character = RequestCanc.Receiveddamageditem;
 
   @override
   Widget build(BuildContext context) {
@@ -73,47 +92,60 @@ class Returnproductreasonscreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustomListTileRadio(
-              inputtext: "Received wrong item",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('Received wrong item'),
+              value: RequestCanc.Receiveddamageditem,
+              activeColor: kPrimaryColor,
+              groupValue: _character,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "Don\'t want the product anymore",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('Don\'t want the product anymore'),
+              value: RequestCanc.Dontwanttheproductanymore,
+              activeColor: kPrimaryColor,
+              groupValue: _character,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "Received different color \/ style",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('Received different color \/ style'),
+              value: RequestCanc.Receiveddifferentcolor,
+              activeColor: kPrimaryColor,
+              groupValue: _character,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "Product is missing in the package",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('Product is missing in the package'),
+              value: RequestCanc.Productismissinginthepackage,
+              activeColor: kPrimaryColor,
+              groupValue: _character,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "Quality of the product not as expected",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
-            ),
-            CustomListTileRadio(
-              inputtext: "The product received is defective",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
-            ),
-            CustomListTileRadio(
-              inputtext: "Received damaged item",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('Quality of the product not as expected'),
+              value: RequestCanc.Qualityoftheproductnotasexpected,
+              activeColor: kPrimaryColor,
+              groupValue: _character,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
           ],
         ),
@@ -135,7 +167,9 @@ class Returnproductreasonscreen extends StatelessWidget {
                   fontSize: 22,
                   color: Colors.white,
                 ),
-                press: () {},
+                press: () {
+                  Get.to(() => ReturnAmounttype());
+                },
               ),
             ],
           ),

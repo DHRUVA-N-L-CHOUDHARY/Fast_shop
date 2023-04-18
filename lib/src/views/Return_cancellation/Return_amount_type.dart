@@ -3,14 +3,23 @@ import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_app_bar.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
-import 'package:fast_shop/src/utils/widgets/Custom_list_tile_radio.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Return_sucess_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
-class ReturnAmounttype extends StatelessWidget {
+enum Refundtype { Refund, Replacement }
+class ReturnAmounttype extends StatefulWidget {
   const ReturnAmounttype({super.key});
 
+  @override
+  State<ReturnAmounttype> createState() => _ReturnAmounttypeState();
+}
+
+class _ReturnAmounttypeState extends State<ReturnAmounttype> {
+  Refundtype? _character = Refundtype.Replacement;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,18 +82,28 @@ class ReturnAmounttype extends StatelessWidget {
                 ],
               ),
             ),
-            CustomListTileRadio(
-              inputtext: "Refund",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
-            ),
-            CustomListTileRadio(
-              inputtext: "Replacement",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
-            ),
+           RadioListTile<Refundtype>(
+          title: const Text('Refund'),
+          value: Refundtype.Refund,
+          activeColor: kPrimaryColor,
+          groupValue: _character,
+          onChanged: (Refundtype? value) {
+            setState(() {
+              _character = value;
+            });
+          },
+        ),
+        RadioListTile<Refundtype>(
+          title: const Text('Replacement'),
+          value: Refundtype.Replacement,
+          groupValue: _character,
+          activeColor: kPrimaryColor,
+          onChanged: (Refundtype? value) {
+            setState(() {
+              _character = value;
+            });
+          },
+        ),
           ],
         ),
       ),
@@ -105,7 +124,9 @@ class ReturnAmounttype extends StatelessWidget {
                   fontSize: 22,
                   color: Colors.white,
                 ),
-                press: () {},
+                press: () {
+                  Get.to(() => const ReturnSucessScreen());
+                },
               ),
             ],
           ),

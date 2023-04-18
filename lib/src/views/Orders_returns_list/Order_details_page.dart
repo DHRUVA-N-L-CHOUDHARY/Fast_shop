@@ -2,6 +2,7 @@ import 'package:fast_shop/src/config/Lists/order_list.dart';
 import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_app_bar.dart';
+import 'package:fast_shop/src/views/Orders_returns_list/My_orders_screen.dart';
 import 'package:fast_shop/src/views/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -101,7 +102,7 @@ class OrderdetailsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Custombutton(
-                text: "Continue Shopping",
+                text: "Continue",
                 inputcolor: kPrimaryColor,
                 customheight: 55,
                 customwidth: 330,
@@ -111,7 +112,7 @@ class OrderdetailsPage extends StatelessWidget {
                   color: Colors.white,
                 ),
                 press: () {
-                  Get.to(()=>NavigationScreen(tabIndex: 1,));
+                  Get.to(()=> const MyOrdersScreen());
                 },
               ),
             ],

@@ -6,14 +6,24 @@ import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_address_container.dart';
 import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_type.dart';
 import 'package:fast_shop/src/views/Payment_other_screens/Payments_screen.dart';
+import 'package:fast_shop/src/views/Shipping_pages/Add_new_address_screen.dart';
+import 'package:fast_shop/src/views/Shipping_pages/Shipping_address_pickup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ShippingAddress extends StatelessWidget {
+enum Shippingtype { HomeDelivery, Pickup }
+
+class ShippingAddress extends StatefulWidget {
   const ShippingAddress({super.key});
 
   @override
+  State<ShippingAddress> createState() => _ShippingAddressState();
+}
+
+class _ShippingAddressState extends State<ShippingAddress> {
+  @override
   Widget build(BuildContext context) {
+    Shippingtype? _character = Shippingtype.HomeDelivery;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -61,29 +71,58 @@ class ShippingAddress extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               // ignore: prefer_const_literals_to_create_immutables
               children: [
-                CustomContainer(
-                  ctrinputHeight: 60,
-                  ctrinputWidth: 150,
-                  brdcolor: Colors.black,
-                  inputtext: "Home Delivery",
-                  bexist: true,
-                  onChanged: (String val) {},
-                  radid: 1,
-                  radstr: 'Home Delivery',
-                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Radio(
+                        visualDensity: const VisualDensity(horizontal: -4),
+                        value: Shippingtype.HomeDelivery,
+                        groupValue: _character,
+                        activeColor: kPrimaryColor,
+                        onChanged: (val) {
+                          setState(() {
+                            _character = val;
+                            Get.to(() => ShippingAddress());
+                          });
+                        },
+                      ),
+                      Text(
+                        "Home Delivery",
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ]),
                 const SizedBox(
                   width: 50,
                 ),
-                CustomContainer(
-                  onChanged: (String val) {},
-                  ctrinputHeight: 60,
-                  ctrinputWidth: 150,
-                  brdcolor: Colors.black,
-                  inputtext: "Pick Up Point",
-                  bexist: true,
-                  radid: 2,
-                  radstr: 'Pick Up Point',
-                ),
+               Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   crossAxisAlignment: CrossAxisAlignment.center,
+                   children: [
+                     Radio(
+                       visualDensity: const VisualDensity(horizontal: -4),
+                       value: Shippingtype.Pickup,
+                       groupValue: _character,
+                       activeColor: kPrimaryColor,
+                       onChanged: (val) {
+                         setState(() {
+                            _character = val;
+                           Get.to(() => ShippingAddressPickup());
+                         });
+                       },
+                     ),
+                     Text(
+                       "Pick Up Point",
+                       style: const TextStyle(
+                         color: Colors.black,
+                         fontSize: 15,
+                       ),
+                     ),
+                   ],
+                   ),
               ],
             ),
             const SizedBox(
@@ -100,7 +139,9 @@ class ShippingAddress extends StatelessWidget {
               height: 50,
             ),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.to(() => AddnewAddressScreen());
+              },
               child: DottedBorder(
                 dashPattern: [3],
                 strokeWidth: 2,

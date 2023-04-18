@@ -11,6 +11,8 @@ import 'package:fast_shop/src/views/Orders_returns_list/Order_screen.dart';
 import 'package:fast_shop/src/views/FAQs/Payment_FAQs.dart';
 import 'package:fast_shop/src/views/Payment_other_screens/Payments_screen.dart';
 import 'package:fast_shop/src/views/FAQs/Return_FAQs_Screen.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Request_cancellation_screen.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Return_product_reason_screen.dart';
 import 'package:fast_shop/src/views/Return_cancellation/Return_sucess_screen.dart';
 import 'package:fast_shop/src/views/FAQs/Shipping_Faqs_screen.dart';
 import 'package:fast_shop/src/views/Shipping_pages/Shipping_address_pickup.dart';
@@ -158,9 +160,12 @@ class AppPages {
       page: () => const NotificationScreen()
     ),
      GetPage(
-      name: Paths.WEHM,
-      page: () => const WeclomeHomeScreen()
+      name: Paths.REQCAN,
+      page: () => const Returncancellationscreen()
     ),
-
+     GetPage(
+      name: Paths.RRES,
+      page: () => const Returnproductreasonscreen()
+    ),
   ];
 }

@@ -2,6 +2,7 @@ import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
+import 'package:fast_shop/src/views/Orders_returns_list/My_returns_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
@@ -341,7 +342,9 @@ class ReviewScren extends StatelessWidget {
                     fontSize: 22,
                     color: Colors.white,
                   ),
-                  press: () {},
+                  press: () {
+                    Get.to(() => MyreturnsScreen());
+                  },
                 ),
               ],
             ),

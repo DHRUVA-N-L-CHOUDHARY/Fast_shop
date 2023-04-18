@@ -124,7 +124,7 @@ class _ReturnStatusScreenState extends State<ReturnStatusScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(inttxt: "Return Status", navstri: "/nav"),
+        appBar: const CustomAppBar(inttxt: "Return Status", navstri: "/mret"),
         backgroundColor: kConrtPrimaryColor,
         body: Padding(
           padding: const EdgeInsets.all(16.0),

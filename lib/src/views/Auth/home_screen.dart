@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
         if(_querySnapshot.docs.isEmpty) {
         return const RegistrationScreen();
         } else {
-          return NavigationScreen(tabIndex: 0,);
+          return NavigationScreen(tabIndex: 1,);
         }
       } else {
         return const LoginScreen();

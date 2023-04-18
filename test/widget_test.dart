@@ -7,8 +7,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-
-import 'package:fast_shop/main.dart';
 import 'package:get/get.dart';
 
 void main() {

@@ -53,6 +53,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   order_tracker: ^0.0.2
   searchfield: ^0.7.2
+  circular_profile_avatar: ^2.0.5
 
 dev_dependencies:
   flutter_test:

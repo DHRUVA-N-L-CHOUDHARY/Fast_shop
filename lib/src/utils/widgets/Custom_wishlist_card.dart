@@ -1,9 +1,11 @@
 import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
+import 'package:fast_shop/src/views/Main_pages/Cart_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
 class WishlistCard extends StatelessWidget {
   final String imgPath;
@@ -120,7 +122,9 @@ class WishlistCard extends StatelessWidget {
                 width: 20,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Get.to(() => CartScreen());
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),

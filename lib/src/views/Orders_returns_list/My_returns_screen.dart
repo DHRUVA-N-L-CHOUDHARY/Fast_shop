@@ -4,9 +4,11 @@ import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_app_bar.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_myorder_container.dart';
+import 'package:fast_shop/src/views/navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
 class MyreturnsScreen extends StatelessWidget {
   const MyreturnsScreen({super.key});
@@ -49,7 +51,9 @@ class MyreturnsScreen extends StatelessWidget {
                       fontSize: 22,
                       color: Colors.white,
                     ),
-                    press: () {},
+                    press: () {
+                      Get.to(() => NavigationScreen(tabIndex: 4,));
+                    },
                   ),
             ),
           ),

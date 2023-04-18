@@ -2,9 +2,11 @@ import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_app_bar.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Cancellation_status_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
 class RequestCancellationSucessScreen extends StatelessWidget {
   const RequestCancellationSucessScreen({super.key});
@@ -49,7 +51,9 @@ class RequestCancellationSucessScreen extends StatelessWidget {
                   fontSize: 22,
                   color: Colors.white,
                 ),
-                press: () {},
+                press: () {
+                  Get.to(() => CancellationStatusScreen());
+                },
               ),
             ),
           ],

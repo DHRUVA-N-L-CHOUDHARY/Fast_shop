@@ -40,31 +40,29 @@ class CustomSearchProductCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(4.0),
         child: Stack(
-          children: <Widget>[
-            Expanded(
-              child: InkWell(
-                onTap: () {
-                  Get.to(() => ProductViewScreen());
-                },
-                child: Column(
-                  children: [
-                    Image.asset(
-                      imgp,
-                      height: 120,
-                      width: 120,
-                    ),
-                    Container(
-                      child: Text(
-                        inptxt,
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.black,
-                        ),
+          children: [
+            InkWell(
+              onTap: () {
+                Get.to(() => ProductViewScreen());
+              },
+              child: Column(
+                children: [
+                  Image.asset(
+                    imgp,
+                    height: 120,
+                    width: 120,
+                  ),
+                  Container(
+                    child: Text(
+                      inptxt,
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w300,
+                        color: Colors.black,
                       ),
-                    )
-                  ],
-                ),
+                    ),
+                  )
+                ],
               ),
             ),
             Positioned(
@@ -77,7 +75,7 @@ class CustomSearchProductCard extends StatelessWidget {
                       child: Row(
                         children: [
                           Image.asset(
-                            bgbl,
+                            star,
                             height: 10,
                             width: 10,
                           ),

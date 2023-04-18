@@ -2,6 +2,7 @@
 
 import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
+import 'package:fast_shop/src/controllers/logout_controller.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_List_tile_FAQ.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -13,6 +14,7 @@ class MyAccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    LogoutController controller = LogoutController();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -113,8 +115,38 @@ class MyAccountScreen extends StatelessWidget {
               CustomListtile(
                 inputtext: "Saved Cards", navi: '/sdcd',
               ),
-              CustomListtile(
-                inputtext: "Logout", navi: '',
+              InkWell(
+                onTap: () {
+                  controller.logoutUser();
+                },
+                child: ListTile(
+          shape: const Border(
+            bottom: BorderSide(
+              color: Colors.black12,
+              style: BorderStyle.solid,
+              width: 0.25
+            ),
+          ),
+          trailing: const IconButton(
+            padding: EdgeInsets.all(0.0),
+            onPressed: null,
+            icon: Icon(
+              Icons.arrow_forward_ios_outlined,
+            ),
+          ),
+          horizontalTitleGap: 0.0,
+          minVerticalPadding: 5.0,
+          contentPadding: const EdgeInsets.only(left: 8.0),
+          title: Text(
+            "Logout",
+            style: const TextStyle(
+              fontSize: 19.5,
+              color: Colors.black,
+              fontWeight: FontWeight.w300,
+            ),
+          ),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
               ),
             ],
           ),

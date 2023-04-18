@@ -3,14 +3,33 @@ import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_app_bar.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
-import 'package:fast_shop/src/utils/widgets/Custom_list_tile_radio.dart';
+import 'package:fast_shop/src/views/Return_cancellation/Cancellation_success_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
-class Returncancellationscreen extends StatelessWidget {
+enum RequestCanc {
+  Expected_delivery_time_is_very_Long,
+  I_want_to_change_my_phone_number,
+  Pricefortheproducthasdecreased,
+  Iwanttochangetheaddressfororder,
+  Iwanttoconvertmyordertoprepaid,
+  NeeddifferentSizeorcolor,
+  Ihavechangedmymind
+
+}
+
+class Returncancellationscreen extends StatefulWidget {
   const Returncancellationscreen({super.key});
 
+  @override
+  State<Returncancellationscreen> createState() =>
+      _ReturncancellationscreenState();
+}
+
+class _ReturncancellationscreenState extends State<Returncancellationscreen> {
+  RequestCanc? _character = RequestCanc.Expected_delivery_time_is_very_Long;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,47 +92,82 @@ class Returncancellationscreen extends StatelessWidget {
                 ],
               ),
             ),
-            CustomListTileRadio(
-              inputtext: "Expected delivery time is very Long",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('Expected delivery time is very Long'),
+              value: RequestCanc.Expected_delivery_time_is_very_Long,
+              activeColor: kPrimaryColor,
+              groupValue: _character,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "I want to change my phone number",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('I want to change my phone number'),
+              value: RequestCanc.I_want_to_change_my_phone_number,
+              groupValue: _character,
+              activeColor: kPrimaryColor,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "Price for the product has decreased",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('Price for the product has decreased'),
+              value: RequestCanc.Pricefortheproducthasdecreased,
+              activeColor: kPrimaryColor,
+              groupValue: _character,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "I want to change the address for order",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('I want to change the address for order'),
+              value: RequestCanc.Iwanttochangetheaddressfororder,
+              groupValue: _character,
+              activeColor: kPrimaryColor,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "I want to convert my order to prepaid",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('I want to convert my order to prepaid'),
+              value: RequestCanc.Iwanttoconvertmyordertoprepaid,
+              activeColor: kPrimaryColor,
+              groupValue: _character,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "Need different Size or color",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('Need different Size or color'),
+              value: RequestCanc.NeeddifferentSizeorcolor,
+              groupValue: _character,
+              activeColor: kPrimaryColor,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
-            CustomListTileRadio(
-              inputtext: "I have changed my mind",
-              onChanged: (String val) {},
-              radid: 1,
-              radstr: '',
+            RadioListTile<RequestCanc>(
+              title: const Text('I have changed my mind'),
+              value: RequestCanc.Ihavechangedmymind,
+              groupValue: _character,
+              activeColor: kPrimaryColor,
+              onChanged: (RequestCanc? value) {
+                setState(() {
+                  _character = value;
+                });
+              },
             ),
           ],
         ),
@@ -135,7 +189,9 @@ class Returncancellationscreen extends StatelessWidget {
                   fontSize: 22,
                   color: Colors.white,
                 ),
-                press: () {},
+                press: () {
+                  Get.to(() => const RequestCancellationSucessScreen());
+                },
               ),
             ],
           ),

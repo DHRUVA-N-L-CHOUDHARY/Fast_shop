@@ -5,26 +5,26 @@ import 'package:fast_shop/src/utils/widgets/Custom_categories_container.dart';
 List<CustomCategories> catoglist = const [
   CustomCategories(
     inputtext: "New In",
-    imgpt: bgbl,
+    imgpt: watch,
     ctrinputHeight: 60,
   ),
   CustomCategories(
-    inputtext: "New In",
-    imgpt: bgbl,
+    inputtext: "Sportswear",
+    imgpt: sportswear,
     ctrinputHeight: 60,
   ),
   CustomCategories(
-    inputtext: "New In",
-    imgpt: bgbl,
+    inputtext: "Clothing",
+    imgpt: clothing,
     ctrinputHeight: 60,
   ),
   CustomCategories(
-    inputtext: "New In",
-    imgpt: bgbl,
+    inputtext: "Shoes",
+    imgpt: nikespts,
     ctrinputHeight: 60,
   ),
   CustomCategories(
-    inputtext: "New In",
+    inputtext: "Accessories",
     imgpt: bgbl,
     ctrinputHeight: 60,
   ),

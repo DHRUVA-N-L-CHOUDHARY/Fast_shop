@@ -57,7 +57,7 @@ class _CancellationStatusScreenState extends State<CancellationStatusScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomAppBar(inttxt: "Cancellation Status", navstri: "/nav"),
+        appBar: CustomAppBar(inttxt: "Cancellation Status", navstri: "/mord"),
         backgroundColor: kConrtPrimaryColor,
         body: Padding(
           padding: const EdgeInsets.all(16.0),

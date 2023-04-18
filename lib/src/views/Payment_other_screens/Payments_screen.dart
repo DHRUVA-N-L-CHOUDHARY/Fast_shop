@@ -10,9 +10,17 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
-class PaymentScreen extends StatelessWidget {
+enum paytype{ mast, applp, ppal, visa, ame }
+
+class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
 
+  @override
+  State<PaymentScreen> createState() => _PaymentScreenState();
+}
+
+class _PaymentScreenState extends State<PaymentScreen> {
+   paytype? _character = paytype.ppal;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,41 +65,176 @@ class PaymentScreen extends StatelessWidget {
             SizedBox(
               height: 0,
             ),
-            CustomPaymenttile(
-                inputtext: "Master card",
-                inputsubtext: "…. …. 4567 8790",
-                radstr: "",
-                radid: 1,
-                onChanged: (String val) {},
-                imgpth: mastercrd),
-             CustomPaymenttile(
-                inputtext: "Apple pay",
-                inputsubtext: "…. …. 4567 8790",
-                radstr: "",
-                radid: 2,
-                onChanged: (String val) {},
-                imgpth: applpay),
-             CustomPaymenttile(
-                inputtext: "Pay Pal",
-                inputsubtext: "",
-                radstr: "",
-                radid: 3,
-                onChanged: (String val) {},
-                imgpth: paypal),
-             CustomPaymenttile(
-                inputtext: "American Express",
-                inputsubtext:  "",
-                radstr: "",
-                radid: 4,
-                onChanged: (String val) {},
-                imgpth: americanexp),
-            CustomPaymenttile(
-                inputtext: "Visa",
-                inputsubtext:  "",
-                radstr: "",
-                radid: 5,
-                onChanged: (String val) {},
-                imgpth: visa),
+            Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListTile(
+        shape: const Border(
+          bottom: BorderSide(
+              color: Colors.black12, style: BorderStyle.solid, width: 0.25),
+        ),
+        trailing: Radio(
+          visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+          value: paytype.mast,
+          groupValue: _character,
+          activeColor: kPrimaryColor,
+          onChanged: (val) {
+            setState(() {
+              _character = val;
+            });
+          },
+        ),
+        horizontalTitleGap: 0.0,
+        minVerticalPadding: 2.0,
+        contentPadding: const EdgeInsets.only(left: 8.0),
+        leading: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Image.asset(mastercrd),
+        ),
+        minLeadingWidth: 30,
+        title: Text(
+          "Master card"
+        ),
+        subtitle: Text(
+          "…. …. 4567 8790"
+        ),
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListTile(
+        shape: const Border(
+          bottom: BorderSide(
+              color: Colors.black12, style: BorderStyle.solid, width: 0.25),
+        ),
+        trailing: Radio(
+          visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+          value: paytype.applp,
+          groupValue: _character,
+          activeColor: kPrimaryColor,
+          onChanged: (val) {
+            setState(() {
+              _character = val;
+            });
+          },
+        ),
+        horizontalTitleGap: 0.0,
+        minVerticalPadding: 2.0,
+        contentPadding: const EdgeInsets.only(left: 8.0),
+        leading: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Image.asset(applpay),
+        ),
+        minLeadingWidth: 30,
+        title: Text(
+         "Apple pay"
+        ),
+        subtitle: Text(
+         applpay
+        ),
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListTile(
+        shape: const Border(
+          bottom: BorderSide(
+              color: Colors.black12, style: BorderStyle.solid, width: 0.25),
+        ),
+        trailing: Radio(
+          visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+          value: paytype.ppal,
+          groupValue: _character,
+          activeColor: kPrimaryColor,
+          onChanged: (val) {
+            setState(() {
+              _character = val;
+            });
+          },
+        ),
+        horizontalTitleGap: 0.0,
+        minVerticalPadding: 2.0,
+        contentPadding: const EdgeInsets.only(left: 8.0),
+        leading: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Image.asset(paypal),
+        ),
+        minLeadingWidth: 30,
+        title: Text(
+          "Pay Pal"
+        ),
+        subtitle: Text(
+          ""
+        ),
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListTile(
+        shape: const Border(
+          bottom: BorderSide(
+              color: Colors.black12, style: BorderStyle.solid, width: 0.25),
+        ),
+        trailing: Radio(
+          visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+          value: paytype.ame,
+          groupValue: _character,
+          activeColor: kPrimaryColor,
+          onChanged: (val) {
+            setState(() {
+              _character = val;
+            });
+          },
+        ),
+        horizontalTitleGap: 0.0,
+        minVerticalPadding: 2.0,
+        contentPadding: const EdgeInsets.only(left: 8.0),
+        leading: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Image.asset(americanexp),
+        ),
+        minLeadingWidth: 30,
+        title: Text(
+          "American Express"
+        ),
+        subtitle: Text(
+          ""
+        ),
+      ),
+    ),
+    Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ListTile(
+        shape: const Border(
+          bottom: BorderSide(
+              color: Colors.black12, style: BorderStyle.solid, width: 0.25),
+        ),
+        trailing: Radio(
+          visualDensity: const VisualDensity(horizontal: -4, vertical: -4),
+          value: paytype.visa,
+          groupValue: _character,
+          activeColor: kPrimaryColor,
+          onChanged: (val) {
+            setState(() {
+              _character = val;
+            });
+          },
+        ),
+        horizontalTitleGap: 0.0,
+        minVerticalPadding: 2.0,
+        contentPadding: const EdgeInsets.only(left: 8.0),
+        leading: Padding(
+          padding: EdgeInsets.all(8.0),
+          child: Image.asset(visa),
+        ),
+        minLeadingWidth: 30,
+        title: Text(
+          "Visa"
+        ),
+        subtitle: Text(
+          ""
+        ),
+      ),
+    ),
              InkWell(
               onTap: () {},
               child: DottedBorder(
@@ -134,6 +277,7 @@ class PaymentScreen extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(height: 100,)
           ],
         ),
       ),

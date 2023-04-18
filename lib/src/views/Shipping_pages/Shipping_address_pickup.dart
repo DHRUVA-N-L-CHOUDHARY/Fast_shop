@@ -5,14 +5,23 @@ import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_List_tile_address.dart';
 import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_address_container.dart';
 import 'package:fast_shop/src/utils/widgets/Shipping_address/Custom_type.dart';
+import 'package:fast_shop/src/views/Payment_other_screens/Payments_screen.dart';
+import 'package:fast_shop/src/views/Shipping_pages/Shipping_address_delivery.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
-class ShippingAddressPickup extends StatelessWidget {
+enum Shippingtype { HomeDelivery, Pickup }
+class ShippingAddressPickup extends StatefulWidget {
   const ShippingAddressPickup({super.key});
 
+  @override
+  State<ShippingAddressPickup> createState() => _ShippingAddressPickupState();
+}
+
+class _ShippingAddressPickupState extends State<ShippingAddressPickup> {
+    Shippingtype? _character = Shippingtype.Pickup;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,15 +55,6 @@ class ShippingAddressPickup extends StatelessWidget {
                   image: const DecorationImage(image: AssetImage(notif2x)),
                   color: kPrimaryColor,
                   borderRadius: BorderRadius.circular(5)),
-              // child: IconButton(
-              //   iconSize: 50,
-              //   icon:  const ImageIcon(
-              //     AssetImage(notif),
-              //     size: 100,
-              //     color: kConrtPrimaryColor,
-              //   ),
-              //   onPressed: () {},
-              // ),
             ),
           )
         ],
@@ -73,29 +73,58 @@ class ShippingAddressPickup extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 // ignore: prefer_const_literals_to_create_immutables
                 children: [
-                  CustomContainer(
-                    ctrinputHeight: 60,
-                    ctrinputWidth: 150,
-                    brdcolor: Colors.black,
-                    inputtext: "Home Delivery",
-                    bexist: true,
-                    onChanged: (String val) {},
-                    radid: 1,
-                    radstr: 'Home Delivery',
-                  ),
-                  const SizedBox(
-                    width: 50,
-                  ),
-                  CustomContainer(
-                    ctrinputHeight: 60,
-                    ctrinputWidth: 150,
-                    brdcolor: Colors.black,
-                    inputtext: "Pick Up Point",
-                    bexist: true,
-                    onChanged: (String val) {},
-                    radid: 2,
-                    radstr: 'Pick Up Point',
-                  ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Radio(
+                        visualDensity: const VisualDensity(horizontal: -4),
+                        value: Shippingtype.HomeDelivery,
+                        groupValue: _character,
+                        activeColor: kPrimaryColor,
+                        onChanged: (val) {
+                          setState(() {
+                            _character = val;
+                            Get.to(() => ShippingAddress());
+                          });
+                        },
+                      ),
+                      Text(
+                        "Home Delivery",
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ]),
+                const SizedBox(
+                  width: 50,
+                ),
+               Row(
+                   mainAxisAlignment: MainAxisAlignment.center,
+                   crossAxisAlignment: CrossAxisAlignment.center,
+                   children: [
+                     Radio(
+                       visualDensity: const VisualDensity(horizontal: -4),
+                       value: Shippingtype.Pickup,
+                       groupValue: _character,
+                       activeColor: kPrimaryColor,
+                       onChanged: (val) {
+                         setState(() {
+                          _character = val;
+                           Get.to(() => ShippingAddressPickup());
+                         });
+                       },
+                     ),
+                     Text(
+                       "Pick Up Point",
+                       style: const TextStyle(
+                         color: Colors.black,
+                         fontSize: 15,
+                       ),
+                     ),
+                   ],
+                   ),
                 ],
               ),
               const SizedBox(
@@ -211,7 +240,9 @@ class ShippingAddressPickup extends StatelessWidget {
                 fontSize: 22,
                 color: Colors.white,
               ),
-              press: () {},
+              press: () {
+                Get.to(() => PaymentScreen());
+              },
             ),
           ],
         ),

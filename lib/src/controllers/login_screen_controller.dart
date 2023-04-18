@@ -47,7 +47,7 @@ class LoginController extends GetxController {
             print(result.toString());
             print(result.toString());
           }
-          Get.to(() => NavigationScreen(
+          Get.offAll(() => NavigationScreen(
                 tabIndex: 0,
               ));
         }

@@ -36,6 +36,8 @@ abstract class Routes {
   static const WEHM = Paths.WEHM;
   static const REFE = Paths.REFE;
   static const NOTI = Paths.NOTI;
+  static const REQCAN = Paths.REQCAN;
+  static const RRES = Paths.RRES;
 }
 
 abstract class Paths {
@@ -70,4 +72,6 @@ abstract class Paths {
   static const WEHM = "/wehm";
   static const REFE = "/refe";
   static const NOTI = "/noti";
+  static const REQCAN = "/reqcan";
+  static const RRES = "/rres";
 }

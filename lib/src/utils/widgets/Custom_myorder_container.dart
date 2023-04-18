@@ -1,8 +1,10 @@
 import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
+import 'package:fast_shop/src/views/Payment_other_screens/Review_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 
 class Custommyordercontainer extends StatelessWidget {
   final double ctrinputHeight;
@@ -16,6 +18,7 @@ class Custommyordercontainer extends StatelessWidget {
   final String bttxt;
   final String nxtsvr;
   final bool opt;
+  final String ntst;
   const Custommyordercontainer({
     super.key,
     required this.ctrinputHeight,
@@ -28,7 +31,8 @@ class Custommyordercontainer extends StatelessWidget {
     this.typser = "Estimate Delivery",
     this.bttxt = "Track order",
     this.nxtsvr = "Cancel",
-    this.opt = false,
+    this.opt = false, 
+    this.ntst = "/reqcan",
   });
 
   @override
@@ -140,12 +144,17 @@ class Custommyordercontainer extends StatelessWidget {
                       const SizedBox(
                         width: 38,
                       ),
-                      Text(
-                        nxtsvr,
-                        style: const TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.red,
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(ntst);
+                        },
+                        child: Text(
+                          nxtsvr,
+                          style: const TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.red,
+                          ),
                         ),
                       ),
                     ],
@@ -170,7 +179,9 @@ class Custommyordercontainer extends StatelessWidget {
                         width: 120,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Get.to(() => ReviewScren());
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),

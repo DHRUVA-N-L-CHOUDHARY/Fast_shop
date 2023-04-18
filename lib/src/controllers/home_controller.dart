@@ -26,28 +26,28 @@ class HomeController extends GetxController {
     if (user == null) {
       Get.offAllNamed("/login");
     } else {
-      Get.offAllNamed("/product");
+      Get.offAllNamed("/nav");
     }
   }
 
-  // @override
-  // void onReady() async {
-  //   googleSign = GoogleSignIn();
-  //   ever(isSignIn, handleAuthStateChanged);
-  //   isSignIn.value = await firebaseAuth.currentUser != null;
-  //   firebaseAuth.authStateChanges().listen((event) {
-  //     isSignIn.value = event != null;
-  //   });
+  @override
+  void onReady() async {
+    googleSign = GoogleSignIn();
+    ever(isSignIn, handleAuthStateChanged);
+    isSignIn.value = await firebaseAuth.currentUser != null;
+    firebaseAuth.authStateChanges().listen((event) {
+      isSignIn.value = event != null;
+    });
 
-  //   super.onReady();
-  // }
+    super.onReady();
+  }
 
   @override
   void onClose() {}
 
   void handleAuthStateChanged(isLoggedIn) {
     if (isLoggedIn) {
-      Get.offAllNamed(Routes.SPLASH, arguments: firebaseAuth.currentUser);
+      Get.offAllNamed(Routes.NAV, arguments: firebaseAuth.currentUser);
     } else {
       Get.offAllNamed(Routes.HOME);
     }

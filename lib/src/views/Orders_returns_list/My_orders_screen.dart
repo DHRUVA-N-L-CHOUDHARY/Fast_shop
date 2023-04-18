@@ -4,6 +4,7 @@ import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_app_bar.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_myorder_container.dart';
+import 'package:fast_shop/src/views/Orders_returns_list/My_returns_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -31,42 +32,6 @@ class MyOrdersScreen extends StatelessWidget {
                 }),
               ),
             ),
-          // Padding(
-          //   padding: EdgeInsets.symmetric(vertical: 8.0),
-          //   child: Custommyordercontainer(
-          //     ctrinputHeight: 150,
-          //     dod: '08 mar 2019',
-          //     imgpth: nikespts,
-          //     name: 'Nike sports wear club Fleece',
-          //     orderid: '678901',
-          //     ordpe: '12\$',
-          //     status: 'In Transit',
-          //   ),
-          // ),
-          // Padding(
-          //   padding: EdgeInsets.symmetric(vertical: 8.0),
-          //   child: Custommyordercontainer(
-          //     ctrinputHeight: 150,
-          //     dod: '08 mar 2019',
-          //     imgpth: nikespts,
-          //     name: 'Nike sports wear club Fleece',
-          //     orderid: '678901',
-          //     ordpe: '12\$',
-          //     status: 'In Transit',
-          //   ),
-          // ),
-          // Padding(
-          //   padding: EdgeInsets.symmetric(vertical: 8.0),
-          //   child: Custommyordercontainer(
-          //     ctrinputHeight: 150,
-          //     dod: '08 mar 2019',
-          //     imgpth: nikespts,
-          //     name: 'Nike sports wear club Fleece',
-          //     orderid: '678901',
-          //     ordpe: '12\$',
-          //     status: 'In Transit',
-          //   ),
-          // ),
         ],
       ),
       bottomSheet: Row(
@@ -87,7 +52,7 @@ class MyOrdersScreen extends StatelessWidget {
                       color: Colors.white,
                     ),
                     press: () {
-                      Get.offAllNamed("/nav");
+                      Get.to(() => const MyreturnsScreen());
                     },
                   ),
             ),

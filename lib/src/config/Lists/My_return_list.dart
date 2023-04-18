@@ -13,6 +13,7 @@ List<Custommyordercontainer> myreturnlist = const [
     status: 'Delivered at',
     bttxt: "Give Feeback",
     nxtsvr: "Return",
+    ntst: "/rres",
     opt: true,
   ),
   Custommyordercontainer(
@@ -26,6 +27,7 @@ List<Custommyordercontainer> myreturnlist = const [
     status: 'Delivered at',
     bttxt: "Give Feeback",
     nxtsvr: "Return",
+    ntst: "/rres",
     opt: true,
   ),
   Custommyordercontainer(
@@ -39,6 +41,7 @@ List<Custommyordercontainer> myreturnlist = const [
     status: 'Delivered at',
     bttxt: "Give Feeback",
     nxtsvr: "Return",
+    ntst: "/rres",
     opt: true,
   ),
 ];

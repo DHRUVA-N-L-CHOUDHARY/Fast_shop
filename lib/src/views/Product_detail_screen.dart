@@ -3,7 +3,9 @@ import 'package:fast_shop/src/config/constants/Colors.dart';
 import 'package:fast_shop/src/config/constants/Strings.dart';
 import 'package:fast_shop/src/config/constants/size_config.dart';
 import 'package:fast_shop/src/utils/widgets/Custom_button.dart';
+import 'package:fast_shop/src/views/Main_pages/Cart_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 
 class ProductViewScreen extends StatefulWidget {
@@ -230,7 +232,7 @@ class _ProductViewScreenState extends State<ProductViewScreen> {
                         child: Row(
                           children: [
                             Image.asset(
-                              bgbl,
+                              star,
                               height: 10,
                               width: 10,
                             ),
@@ -407,7 +409,9 @@ class _ProductViewScreenState extends State<ProductViewScreen> {
                     fontSize: 22,
                     color: Colors.white,
                   ),
-                  press: () {},
+                  press: () {
+                    Get.to(() => CartScreen());
+                  },
                 ),
               ],
             ),
